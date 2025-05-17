@@ -3,37 +3,37 @@ const dotenv = require('dotenv');
 const cors = require('cors');
 const connectDB = require('./config/db');
 
-// Load environment variables
+
 dotenv.config();
 
-// Connect to database
+//db connection built
 connectDB();
 
-// Initialize express
+
 const app = express();
 
-// Middleware
+//Middleware through express
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
-// Enable CORS
+//CORS added
 app.use(cors({
-  origin: 'http://localhost:3000', // React frontend URL
+  origin: 'http://localhost:3000', //react frontend URL
   credentials: true
 }));
 
-// Routes
+//routes
 app.use('/api/education', require('./routes/educationRoutes'));
 app.use('/api/skills', require('./routes/skillRoutes'));
 app.use('/api/projects', require('./routes/projectRoutes'));
 app.use('/api/experiences', require('./routes/experienceRoutes'));
 
-// Basic route
+
 app.get('/', (req, res) => {
-  res.json({ message: 'Welcome to Portfolio API' });
+  res.json({ message: 'Welcome to Portfolio' });
 });
 
-// Error handling middleware
+//error handling middleware
 app.use((req, res, next) => {
   const error = new Error(`Not Found - ${req.originalUrl}`);
   res.status(404);
@@ -49,7 +49,6 @@ app.use((err, req, res, next) => {
   });
 });
 
-// Start server
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
