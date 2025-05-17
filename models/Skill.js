@@ -13,12 +13,8 @@ const skillSchema = new mongoose.Schema({
   category: {
     type: String,
     enum: ['Programming', 'Language', 'Framework', 'Tool', 'Soft Skill', 'Other'],
-    required: [true, 'Skill category is required']
+    required: [false, 'Skill category is required']
   },
-  yearsOfExperience: {
-    type: Number,
-    default: 0
-  }
 }, {
   timestamps: true
 });
