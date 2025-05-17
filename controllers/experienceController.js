@@ -1,8 +1,6 @@
 const Experience = require('../models/Experience');
 
-// @desc    Get all experiences
-// @route   GET /api/experiences
-// @access  Public
+//getting access to all endpoints
 exports.getExperiences = async (req, res) => {
   try {
     const experiences = await Experience.find().sort({ startDate: -1 });
@@ -12,9 +10,7 @@ exports.getExperiences = async (req, res) => {
   }
 };
 
-// @desc    Get single experience
-// @route   GET /api/experiences/:id
-// @access  Public
+//getting access to single id endpoint
 exports.getExperience = async (req, res) => {
   try {
     const experience = await Experience.findById(req.params.id);
@@ -29,9 +25,7 @@ exports.getExperience = async (req, res) => {
   }
 };
 
-// @desc    Create experience
-// @route   POST /api/experiences
-// @access  Public (should be Private in production)
+//creating post in json doc
 exports.createExperience = async (req, res) => {
   try {
     const experience = await Experience.create(req.body);
@@ -41,9 +35,7 @@ exports.createExperience = async (req, res) => {
   }
 };
 
-// @desc    Update experience
-// @route   PUT /api/experiences/:id
-// @access  Public (should be Private in production)
+//updating any info
 exports.updateExperience = async (req, res) => {
   try {
     const experience = await Experience.findById(req.params.id);
@@ -64,9 +56,7 @@ exports.updateExperience = async (req, res) => {
   }
 };
 
-// @desc    Delete experience
-// @route   DELETE /api/experiences/:id
-// @access  Public (should be Private in production)
+//deleting any info
 exports.deleteExperience = async (req, res) => {
   try {
     const experience = await Experience.findById(req.params.id);

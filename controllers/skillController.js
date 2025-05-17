@@ -1,8 +1,6 @@
 const Skill = require('../models/Skill');
 
-// @desc    Get all skills
-// @route   GET /api/skills
-// @access  Public
+//getting access to all endpoints
 exports.getSkills = async (req, res) => {
   try {
     const skills = await Skill.find().sort({ category: 1, name: 1 });
@@ -12,9 +10,7 @@ exports.getSkills = async (req, res) => {
   }
 };
 
-// @desc    Get single skill
-// @route   GET /api/skills/:id
-// @access  Public
+//getting access to specific id endpoints
 exports.getSkill = async (req, res) => {
   try {
     const skill = await Skill.findById(req.params.id);
@@ -29,9 +25,7 @@ exports.getSkill = async (req, res) => {
   }
 };
 
-// @desc    Create skill
-// @route   POST /api/skills
-// @access  Public (should be Private in production)
+//creating a post json doc
 exports.createSkill = async (req, res) => {
   try {
     const skill = await Skill.create(req.body);
@@ -41,9 +35,7 @@ exports.createSkill = async (req, res) => {
   }
 };
 
-// @desc    Update skill
-// @route   PUT /api/skills/:id
-// @access  Public (should be Private in production)
+//updating any info
 exports.updateSkill = async (req, res) => {
   try {
     const skill = await Skill.findById(req.params.id);
@@ -64,9 +56,7 @@ exports.updateSkill = async (req, res) => {
   }
 };
 
-// @desc    Delete skill
-// @route   DELETE /api/skills/:id
-// @access  Public (should be Private in production)
+//deleting any info
 exports.deleteSkill = async (req, res) => {
   try {
     const skill = await Skill.findById(req.params.id);
