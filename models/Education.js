@@ -19,7 +19,7 @@ const educationSchema = new mongoose.Schema({
   },
   endDate: {
     type: Date,
-    default: null // null means currently studying
+    default: null 
   },
   description: {
     type: String
