@@ -1,8 +1,6 @@
 const Education = require('../models/Education');
 
-// @desc    Get all education entries
-// @route   GET /api/education
-// @access  Public
+// getting access to all education endpoints
 exports.getEducations = async (req, res) => {
   try {
     const educations = await Education.find().sort({ startDate: -1 });
@@ -12,9 +10,7 @@ exports.getEducations = async (req, res) => {
   }
 };
 
-// @desc    Get single education entry
-// @route   GET /api/education/:id
-// @access  Public
+// getting access to specific id endpoint
 exports.getEducation = async (req, res) => {
   try {
     const education = await Education.findById(req.params.id);
@@ -29,9 +25,7 @@ exports.getEducation = async (req, res) => {
   }
 };
 
-// @desc    Create education entry
-// @route   POST /api/education
-// @access  Public (should be Private in production)
+// posting a data in json doc
 exports.createEducation = async (req, res) => {
   try {
     const education = await Education.create(req.body);
@@ -41,9 +35,7 @@ exports.createEducation = async (req, res) => {
   }
 };
 
-// @desc    Update education entry
-// @route   PUT /api/education/:id
-// @access  Public (should be Private in production)
+// updating any info
 exports.updateEducation = async (req, res) => {
   try {
     const education = await Education.findById(req.params.id);
@@ -64,9 +56,7 @@ exports.updateEducation = async (req, res) => {
   }
 };
 
-// @desc    Delete education entry
-// @route   DELETE /api/education/:id
-// @access  Public (should be Private in production)
+//deleting any info
 exports.deleteEducation = async (req, res) => {
   try {
     const education = await Education.findById(req.params.id);
