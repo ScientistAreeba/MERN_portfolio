@@ -28,7 +28,7 @@ export default function ExperienceForm() {
       };
 
       await axios.post(
-        `${process.env.REACT_APP_API_URL}/api/experience`,
+        `${process.env.REACT_APP_API_URL}/api/experiences`,
         payload,
         { headers: { 'Content-Type': 'application/json' } }
       );

@@ -6,7 +6,7 @@ export default function ExperienceList() {
 
   useEffect(() => {
     axios
-      .get(`${process.env.REACT_APP_API_URL}/api/experience`)
+      .get(`${process.env.REACT_APP_API_URL}/api/experiences`)
       .then((res) => setItems(res.data))
       .catch((err) => console.error('Error fetching experience:', err));
   }, []);
