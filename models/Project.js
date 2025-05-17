@@ -28,7 +28,7 @@ const projectSchema = new mongoose.Schema({
   },
   endDate: {
     type: Date,
-    default: null // null means ongoing project
+    default: null 
   }
 }, {
   timestamps: true
