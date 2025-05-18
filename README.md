@@ -13,6 +13,21 @@ This is a full-stack portfolio management application that allows users to manag
 - MongoDB database integration
 - Full CRUD operations
 - React frontend with React Router navigation
+  
+## Instructions to clone repository: 
+
+### Prerequisites
+- Node.js and npm installed
+- MongoDB and Postman installed and running locally
+### Backend Setup
+cd portfolio-backend
+Install dependencies
+create .env file with mongoDB uri
+Start backend server: npm run dev
+### Frontend Setup
+Install frontend dependencies
+Create .env with react url
+Start frontend React app: npm start
 
 
 ## Technologies Used
