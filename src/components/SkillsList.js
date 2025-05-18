@@ -15,7 +15,7 @@ export default function SkillsList({ onEdit, refreshTrigger }) {
     if (window.confirm('Are you sure you want to delete this skill?')) {
       await axios.delete(`${process.env.REACT_APP_API_URL}/api/skills/${id}`);
       alert('Skill deleted');
-      onEdit(null); // exit edit mode
+      onEdit(null); 
     }
   };
 
