@@ -1,22 +1,25 @@
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
-import './App.css';
+import HomePage from './pages/HomePage';
 import EducationPage from './pages/EducationPage';
 import SkillsPage from './pages/SkillsPage';
 import ProjectsPage from './pages/ProjectsPage';
 import ExperiencePage from './pages/ExperiencePage';
+import './App.css';
 
 function App() {
   return (
     <Router>
-      <nav style={{ padding: '10px', backgroundColor: '#f0f0f0' }}>
-        <Link to="/" style={{ marginRight: 20 }}>Education</Link>
-        <Link to="/skills" style={{ marginRight: 20 }}>Skills</Link>
-        <Link to="/projects" style={{ marginRight: 20 }}>Projects</Link>
-        <Link to="/experience">Experience</Link>
+      <nav className="main-nav">
+        <Link to="/">Home</Link>
+        <Link to="/education">Education</Link>
+        <Link to="/skills">Skills</Link>
+        <Link to="/projects">Projects</Link>
+        <Link to="/experience">Experiences</Link>
       </nav>
 
       <Routes>
-        <Route path="/" element={<EducationPage />} />
+        <Route path="/" element={<HomePage />} />
+        <Route path="/education" element={<EducationPage />} />
         <Route path="/skills" element={<SkillsPage />} />
         <Route path="/projects" element={<ProjectsPage />} />
         <Route path="/experience" element={<ExperiencePage />} />
