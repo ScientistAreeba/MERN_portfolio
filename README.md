@@ -16,6 +16,9 @@ This is a full-stack portfolio management application that allows users to manag
 
 ## Screenshots
 <img width="926" alt="image" src="https://github.com/user-attachments/assets/c6acd4d0-e2e1-412f-a546-cc1e5e7c3127" />
+![image](https://github.com/user-attachments/assets/ae9cf325-3059-4607-8f6f-a185e87682ed)
+![image](https://github.com/user-attachments/assets/ad21d81f-dceb-463e-90c3-cc8c2272ab5d)
+
 
 
 ## Technologies Used
