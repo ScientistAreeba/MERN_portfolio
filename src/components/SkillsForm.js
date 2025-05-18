@@ -1,12 +1,18 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import axios from 'axios';
 
-export default function SkillsForm() {
+export default function SkillsForm({ editData, onSave }) {
   const [form, setForm] = useState({
     name: '',
     level: 'Beginner',
-    category: 'Programming',
+    category: 'Tool',
   });
+
+  useEffect(() => {
+    if (editData) {
+      setForm(editData);
+    }
+  }, [editData]);
 
   const handleChange = (e) =>
     setForm({ ...form, [e.target.name]: e.target.value });
@@ -14,17 +20,21 @@ export default function SkillsForm() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.post(
-        `${process.env.REACT_APP_API_URL}/api/skills`,
-        form,
-        { headers: { 'Content-Type': 'application/json' } }
-      );
-      alert('Skill added!');
-      // Reset
-      setForm({ name: '', level: 'Beginner', category: 'Programming' });
+      if (editData) {
+        //update
+        await axios.put(`${process.env.REACT_APP_API_URL}/api/skills/${editData._id}`, form);
+        alert('Skill updated!');
+      } else {
+        //create
+        await axios.post(`${process.env.REACT_APP_API_URL}/api/skills`, form);
+        alert('Skill created!');
+      }
+
+      onSave(); //refresh state
+      setForm({ name: '', level: 'Beginner', category: 'Programming' }); //reset
     } catch (err) {
-      console.error('Error adding skill:', err);
-      alert('Failed to add skill.');
+      console.error('Error saving skill:', err);
+      alert('Failed to save skill.');
     }
   };
 
@@ -37,35 +47,30 @@ export default function SkillsForm() {
         placeholder="Skill Name"
         required
       />
-
-      {/* Level dropdown */}
       <select
         name="level"
         value={form.level}
         onChange={handleChange}
         required
       >
-        <option value="Beginner">Beginner</option>
-        <option value="Intermediate">Intermediate</option>
-        <option value="Advanced">Advanced</option>
-        <option value="Expert">Expert</option>
+        <option>Beginner</option>
+        <option>Intermediate</option>
+        <option>Advanced</option>
+        <option>Expert</option>
       </select>
-
-      {/* Category dropdown */}
       <select
         name="category"
         value={form.category}
         onChange={handleChange}
       >
-        <option value="Programming">Programming</option>
-        <option value="Language">Language</option>
-        <option value="Framework">Framework</option>
-        <option value="Tool">Tool</option>
-        <option value="Soft Skill">Soft Skill</option>
-        <option value="Other">Other</option>
+        <option>Programming</option>
+        <option>Language</option>
+        <option>Framework</option>
+        <option>Tool</option>
+        <option>Soft Skill</option>
+        <option>Other</option>
       </select>
-
-      <button type="submit">Add Skill</button>
+      <button type="submit">{editData ? 'Update' : 'Add'} Skill</button>
     </form>
   );
 }
