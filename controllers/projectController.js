@@ -1,8 +1,6 @@
 const Project = require('../models/Project');
 
-// @desc    Get all projects
-// @route   GET /api/projects
-// @access  Public
+//getting access to all endpoints
 exports.getProjects = async (req, res) => {
   try {
     const projects = await Project.find().sort({ startDate: -1 });
@@ -12,9 +10,7 @@ exports.getProjects = async (req, res) => {
   }
 };
 
-// @desc    Get single project
-// @route   GET /api/projects/:id
-// @access  Public
+//getting access to specific id endpoint
 exports.getProject = async (req, res) => {
   try {
     const project = await Project.findById(req.params.id);
@@ -29,9 +25,7 @@ exports.getProject = async (req, res) => {
   }
 };
 
-// @desc    Create project
-// @route   POST /api/projects
-// @access  Public (should be Private in production)
+//creating a json doc info
 exports.createProject = async (req, res) => {
   try {
     const project = await Project.create(req.body);
@@ -41,9 +35,7 @@ exports.createProject = async (req, res) => {
   }
 };
 
-// @desc    Update project
-// @route   PUT /api/projects/:id
-// @access  Public (should be Private in production)
+//updating any info
 exports.updateProject = async (req, res) => {
   try {
     const project = await Project.findById(req.params.id);
@@ -64,9 +56,7 @@ exports.updateProject = async (req, res) => {
   }
 };
 
-// @desc    Delete project
-// @route   DELETE /api/projects/:id
-// @access  Public (should be Private in production)
+//deleting any info
 exports.deleteProject = async (req, res) => {
   try {
     const project = await Project.findById(req.params.id);
