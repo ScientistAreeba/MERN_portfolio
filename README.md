@@ -13,22 +13,9 @@ This is a full-stack portfolio management application that allows users to manag
 - MongoDB database integration
 - Full CRUD operations
 - React frontend with React Router navigation
-  
-## Instructions to clone repository: 
 
-### Prerequisites
-- Node.js and npm installed
-- MongoDB and Postman installed and running locally
-### Backend Setup
-- cd portfolio-backend
-- Install dependencies
-- Create .env file with mongoDB uri
-- Start backend server: npm run dev
-### Frontend Setup
-- cd portfolio-frontend
-- Install frontend dependencies
-- Create .env with react url
-- Start frontend React app: npm start
+## Screenshots
+<img width="926" alt="image" src="https://github.com/user-attachments/assets/c6acd4d0-e2e1-412f-a546-cc1e5e7c3127" />
 
 
 ## Technologies Used
@@ -46,6 +33,23 @@ This is a full-stack portfolio management application that allows users to manag
 - React
 - Axios
 - React Router DOM
+
+
+## Instructions to clone repository: 
+
+### Prerequisites
+- Node.js and npm installed
+- MongoDB and Postman installed and running locally
+### Backend Setup
+- cd portfolio-backend
+- Install dependencies
+- Create .env file with mongoDB uri
+- Start backend server: npm run dev
+### Frontend Setup
+- cd portfolio-frontend
+- Install frontend dependencies
+- Create .env with react url
+- Start frontend React app: npm start
 
 
 ## API endpoints
