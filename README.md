@@ -20,15 +20,15 @@ This is a full-stack portfolio management application that allows users to manag
 - Node.js and npm installed
 - MongoDB and Postman installed and running locally
 ### Backend Setup
--cd portfolio-backend
--Install dependencies
--Create .env file with mongoDB uri
--Start backend server: npm run dev
+- cd portfolio-backend
+- Install dependencies
+- Create .env file with mongoDB uri
+- Start backend server: npm run dev
 ### Frontend Setup
--cd portfolio-frontend
--Install frontend dependencies
--Create .env with react url
--Start frontend React app: npm start
+- cd portfolio-frontend
+- Install frontend dependencies
+- Create .env with react url
+- Start frontend React app: npm start
 
 
 ## Technologies Used
